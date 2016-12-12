@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <p><b>Found: </b><%= foundObject.title %></p>
+      <p><b> Where: </b><%= foundObject.location %></p>
+      <p><b> Notes: </b><%= foundObject.about %></p>
+    </div>
+
+    <a href="/found-objects" class="btn btn-primary">Back</a>
+    <a href="/found-objects/<%= foundObject._id %>/edit" class="btn btn-danger">Edit</a>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>

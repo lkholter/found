@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <h3>FOUND:</h3>
+      <% foundObjects.forEach(function(foundObject) { %>
+        <h4>
+          <form method="POST" action="/found-objects/<%= foundObject._id %>?_method=DELETE">
+            <a href="/found-objects/<%= foundObject._id %>">
+            <p>  <%= foundObject.title %> </p>
+            <p>  location: <%= foundObject.location %> </p>
+            <p>  about:  <%= foundObject.about %> </p>
+            </a>
+            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+          </form>
+        </h4>
+      <% }) %>
+    </div>
+    <a href="/found-objects/new" class="btn btn-primary">New</a>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
