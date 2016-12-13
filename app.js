@@ -9,11 +9,14 @@ var methodOverride = require('method-override');
 var passport = require('passport');
 var session = require('express-session');
 var flash = require('connect-flash');
+var multer  =   require('multer');
+
 
 // Routes
 var homeRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var foundRouter = require('./routes/found-objects');
+// var picturesRouter = require('./routes/pictures');
 
 var app = express();
 
@@ -32,6 +35,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
+// app.use(multer({dest: __dirname + '../public/uploads/'}))
+
 
 app.use(session({ secret: 'WDI Rocks!',
                   resave: true,
@@ -53,6 +58,7 @@ app.use(function (req, res, next) {
 app.use('/', homeRouter);
 app.use('/users', usersRouter);
 app.use('/found-objects', foundRouter);
+// app.use('/pictures', picturesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

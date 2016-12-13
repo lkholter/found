@@ -40,16 +40,6 @@ router.get('/new', authenticate, function(req, res, next) {
 
 
 // SHOW
-// router.get('/:id', authenticate, function(req, res, next) {
-//   FoundObject.findById(req.params.id)
-//   .then(function(foundObject) {
-//     if (!foundObject) return next(makeError(res, 'Document not found', 404));
-//     res.render('found-objects/show', { foundObject: foundObject });
-//   }, function(err) {
-//     return next(err);
-//   });
-// });
-
 router.get('/:id', authenticate, function(req, res, next) {
   var foundObject = currentUser.foundObjects.id(req.params.id);
   if (!foundObject) return next(makeError(res, 'Document not found', 404));
@@ -57,20 +47,6 @@ router.get('/:id', authenticate, function(req, res, next) {
 });
 
 // CREATE
-// router.post('/', function(req, res, next) {
-//   var foundObject = new FoundObject({
-//     title: req.body.title,
-//     location: req.body.location,
-//     about: req.body.about
-//   });
-//   foundObject.save()
-//   .then(function(saved) {
-//     res.redirect('/found-objects');
-//   }, function(err) {
-//     return next(err);
-//   });
-// });
-
 router.post('/', authenticate, function(req, res, next) {
   var foundObject = {
     title: req.body.title,
@@ -90,16 +66,6 @@ router.post('/', authenticate, function(req, res, next) {
 });
 
 // EDIT
-// router.get('/:id/edit', function(req, res, next) {
-//   FoundObject.findById(req.params.id)
-//   .then(function(foundObject) {
-//     if (!foundObject) return next(makeError(res, 'Document not found', 404));
-//     res.render('found-objects/edit', { foundObject: foundObject });
-//   }, function(err) {
-//     return next(err);
-//   });
-// });
-
 router.get('/:id/edit', authenticate, function(req, res, next) {
   var foundObject = currentUser.foundObjects.id(req.params.id);
   if (!foundObject) return next(makeError(res, 'Document not found', 404));
@@ -107,22 +73,6 @@ router.get('/:id/edit', authenticate, function(req, res, next) {
 });
 
 // UPDATE
-// router.put('/:id', function(req, res, next) {
-//   FoundObject.findById(req.params.id)
-//   .then(function(foundObject) {
-//     if (!foundObject) return next(makeError(res, 'Document not found', 404));
-//     foundObject.title = req.body.title;
-//     foundObject.location = req.body.location;
-//     foundObject.about = req.body.about;
-//     return foundObject.save();
-//   })
-//   .then(function(saved) {
-//     res.redirect('/found-objects');
-//   }, function(err) {
-//     return next(err);
-//   });
-// });
-
 router.put('/:id', authenticate, function(req, res, next) {
   var foundObject = currentUser.foundObjects.id(req.params.id);
   if (!foundObject) return next(makeError(res, 'Document not found', 404));
@@ -141,15 +91,6 @@ router.put('/:id', authenticate, function(req, res, next) {
 });
 
 // DESTROY
-// router.delete('/:id', function(req, res, next) {
-//   FoundObject.findByIdAndRemove(req.params.id)
-//   .then(function() {
-//     res.redirect('/found-objects');
-//   }, function(err) {
-//     return next(err);
-//   });
-// });
-
 router.delete('/:id', authenticate, function(req, res, next) {
   var foundObject = currentUser.foundObjects.id(req.params.id);
   if (!foundObject) return next(makeError(res, 'Document not found', 404));
