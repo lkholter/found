@@ -34,7 +34,6 @@ router.get('/new', authenticate, function(req, res, next) {
     title: '',
     location: '',
     about: '',
-    timestamp: true
   };
   res.render('found-objects/new', { foundObject: foundObject } );
 });
@@ -76,7 +75,8 @@ router.post('/', authenticate, function(req, res, next) {
   var foundObject = {
     title: req.body.title,
     location: req.body.location,
-    about: req.body.about
+    about: req.body.about,
+    date: req.body.createdAt
   };
   // Since a user's todos are an embedded document, we just need to push a new
   // TODO to the user's list of todos and save the user.
@@ -130,6 +130,7 @@ router.put('/:id', authenticate, function(req, res, next) {
     foundObject.title = req.body.title;
     foundObject.location = req.body.location;
     foundObject.about = req.body.about;
+    foundObject.date = req.body.createdAt
     currentUser.save()
     .then(function(saved) {
       res.redirect('/found-objects');

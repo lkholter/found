@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var FoundObjectSchema = new mongoose.Schema({
   title: String,
   location: String,
-  about: String
+  about: String,
 }, {
   timestamps: true
 });
@@ -11,7 +11,7 @@ var FoundObjectSchema = new mongoose.Schema({
 function date2String(date) {
   var options = {
     weekday: 'long', year: 'numeric', month: 'short',
-    day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
+    day: 'numeric', hour: '2-digit', minute: '2-digit'
   };
   return date.toLocaleDateString('en-US', options);
 }
