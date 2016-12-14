@@ -47,9 +47,14 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkW3ObnNXp2SNgCv9DQ5xc0mM2P7yFfrA&libraries=places&callback=initAutocomplete"
          async defer></script>
 
-<script> function initAutocomplete() {
+
+<script>
+// var map;
+// var myLatLng = {lat: <%= foundObject.location.lat %>, lng: <%= foundObject.location.lng %>};
+
+function initAutocomplete() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 33.772264, lng: -84.366190},
+    center: {lat: 33.7722640, lng: -84.3661900},
     zoom: 13,
     mapTypeId: 'roadmap'
   });
@@ -113,10 +118,15 @@
     });
     map.fitBounds(bounds);
   });
+
+  // google.maps.event.addListener(marker, 'dragend', function(evt){
+  // }
+
 }</script>
 
   <input type="text"
          class="form-control"
+         id='myLocation'
          name="location"
          value="<%= foundObject.location %>">
  </div>

@@ -7,7 +7,12 @@ var UserSchema = new mongoose.Schema({
     email    : String,
     password : String
   },
-  foundObjects : [FoundObject.schema]
+  foundObjects : [FoundObject.schema],
+  savedLocations: [
+    { lat: Number,
+      lng: Number
+    }
+  ]
 });
 
 UserSchema.methods.encrypt = function(password) {
