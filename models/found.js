@@ -4,6 +4,7 @@ var FoundObjectSchema = new mongoose.Schema({
   title: String,
   location: String,
   about: String,
+  date: String,
 }, {
   timestamps: true
 });

@@ -9,7 +9,6 @@ var methodOverride = require('method-override');
 var passport = require('passport');
 var session = require('express-session');
 var flash = require('connect-flash');
-var multer  =   require('multer');
 
 
 // Routes

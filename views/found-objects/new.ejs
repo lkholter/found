@@ -18,12 +18,8 @@
     </form>
   </main>
 
-  <form action="/pictures/upload" method="POST" enctype="multipart/form-data">
-    Post a picture!
-    <input type="file" name="image">
-    <input type="submit" value="Upload Image">
-  </form>
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1pLE3h6R4BxpjBr9SSyHhizAtqKp7zic&libraries=places&callback=initMap"
+      async defer></script>
 
   <footer>
     <% include ../partials/footer %>
