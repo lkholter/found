@@ -11,7 +11,7 @@
 
   <main>
     <div>
-      <h2>found</h2>
+      <h3>found</h3>
       <% foundObjects.forEach(function(foundObject) { %>
 
           <form method="POST" action="/found-objects/<%= foundObject._id %>?_method=DELETE">
@@ -24,13 +24,13 @@
 
 
             <!-- <div class="container-fluid" id="map"></div> -->
-            <a href="/found-objects/<%= foundObject._id %>/edit" class="waves-effect waves-light btn lime darken-2">Edit</a>
-            <button type="submit" class="waves-effect waves-light btn lime darken-2">Delete</button>
+            <a href="/found-objects/<%= foundObject._id %>/edit" class="waves-effect waves-light btn light-green lighten-2">Edit</a>
+            <button type="submit" class="waves-effect waves-light btn light-green lighten-2">Delete</button>
           </form>
 
       <% }) %>
     </div>
-    <a href="/found-objects/new" class="waves-effect waves-light btn lime darken-2">New</a>
+    <a href="/found-objects/new" class="waves-effect waves-light btn light-green lighten-2">New</a>
   </main>
 
   <footer>
