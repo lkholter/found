@@ -1,0 +1,34 @@
+body {
+  /*background-image: url('/images/light-as-feather-orig.jpg');*/
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  background-color: #ffffff;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/light-as-feather-orig.jpg');
+  color: white;
+}
+
+h1 {
+  font-family: 'Nothing You Could Do', cursive;
+  font-size: 8em;
+  margin-top: 70px;
+  text-align: left;
+}
+
+h2 {
+  margin-top: -15px;
+  text-align: left;
+  font-size: 2em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+p {
+  font-size: 2em;
+  font-family: 'Anaheim', sans-serif;
+  margin-top: 70px;
+  width: 900px;
+  line-height: 38px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
