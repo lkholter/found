@@ -16,6 +16,7 @@ body {
   h3 {
     font-family: 'Nothing You Could Do', cursive;
     font-size: 40px;
+    margin-left: -40px;
 }
 
 h2 {
@@ -27,5 +28,9 @@ p {
   line-height: 20px;
   font-size: 22px;
   font-family: 'Source Sans Pro', sans-serif;
+}
 
+p.category {
+  color: #4e342e;
+  margin-left: -40px;
 }
